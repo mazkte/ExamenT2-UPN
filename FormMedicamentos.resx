@@ -121,7 +121,7 @@
   <data name="v_lbl_image.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAA/9JREFUaEPtlVtIFFEYx6fAIh+KqCBIkjINCSoRH6La1bLoQWsm24eI6KGyLOlC
+        DAAACwwBP0AiyAAAA/9JREFUaEPtlVtIFFEYx6fAIh+KqCBIkjINCSoRH6La1bLoQWsm24eI6KGyLOlC
         D0GIRRfsCoERSEVFgWgpaTOL3TC6WISRV6zENLzAplKWZRfp63yzZ9p1+nTP6LYbsX/4MTC785/fmXPO
         jBRKKKGE8v8l2XFngk1W022KVmlX1Hqbou5dKhdP4j//u0mS1Xi7ouUx4V52BG/Yua/sWGhfrSZLEozi
         lwQ/doc61SZrOxm1ZulBkbXX7HhgoaN0Oq8JcPbvH41PkkkU2mX1+wA5C7BB9zPusGXmiE+vDOPtfy92
@@ -147,8 +147,17 @@
   <metadata name="medicamentoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>32759, 32762</value>
   </metadata>
+  <metadata name="MontoInvertido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="medicamentoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>32759, 32762</value>
+  </metadata>
+  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 32767</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>26</value>
+    <value>126</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -226,4 +235,7 @@
         EgSSmZIE6SkKC9EpCiX+iRKL/S6KJ/8pT/8=
 </value>
   </data>
+  <metadata name="errorProvider2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 32799</value>
+  </metadata>
 </root>

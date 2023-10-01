@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExamenT2
+namespace Laboratorio
 {
     internal struct Medicamento
     {

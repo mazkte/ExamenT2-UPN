@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace ExamenT2
+namespace Laboratorio
 {
     public partial class FormMedicamentos : Form
     {
@@ -28,21 +29,30 @@ namespace ExamenT2
 
         private void v_btn_registrar_Click(object sender, EventArgs e)
         {
-            Medicamento medicamento = new Medicamento
-            {
-                Codigo = v_txt_codigo.Text,
-                Nombre = v_txt_nombre.Text,
-                Cantidad = int.Parse(v_txt_cantidad.Text),
-                PrecioUnitario = double.Parse(v_txt_precio.Text),
-                
-            };
+            
 
-            if( v_gestorMedicamento.Registrar(medicamento))
+            if (ValidarData())
             {
-                MessageBox.Show("Se registro correctamente el medicamento : " + v_txt_nombre.Text);
-                LimpiarControles();
-                return;
+
+                Medicamento medicamento = new Medicamento
+                {
+                    Codigo = v_txt_codigo.Text,
+                    Nombre = v_txt_nombre.Text,
+                    Cantidad = int.Parse(v_txt_cantidad.Text),
+                    PrecioUnitario = double.Parse(v_txt_precio.Text),
+
+                };
+
+                if (v_gestorMedicamento.Registrar(medicamento))
+                {
+                    MessageBox.Show("Se registro correctamente el medicamento : " + v_txt_nombre.Text);
+                    LimpiarControles();
+                    return;
+                }
+
             }
+
+            
 
         }
 
@@ -151,5 +161,28 @@ namespace ExamenT2
             v_txt_eliminar.Clear();
 
         }
+    
+        private bool ValidarData()
+        {
+
+            var v_contador_errores = 0;
+            
+            if (!int.TryParse(v_txt_cantidad.Text, out int x) || x <= 0)
+            {
+                errorProvider1.SetError(v_txt_cantidad, $"{v_txt_cantidad.Text} no es una cantidad valida");
+                v_contador_errores++;
+            }
+
+            if (!double.TryParse(v_txt_precio.Text, out double y) || y <= 0)
+            {
+                errorProvider1.SetError(v_txt_precio, $"{v_txt_precio.Text} no es un precio valido");
+                v_contador_errores++;
+            }
+
+            return (v_contador_errores == 0 );
+
+
+        }
+    
     }
 }

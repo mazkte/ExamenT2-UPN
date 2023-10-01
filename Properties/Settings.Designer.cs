@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExamenT2.Properties
+namespace Laboratorio.Properties
 {
 
 

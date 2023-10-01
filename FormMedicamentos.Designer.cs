@@ -2,7 +2,7 @@
 using System.CodeDom;
 using System.Drawing;
 
-namespace ExamenT2
+namespace Laboratorio
 {
     partial class FormMedicamentos
     {
@@ -60,16 +60,18 @@ namespace ExamenT2
             this.v_btn_ordenar = new System.Windows.Forms.Button();
             this.v_btn_buscar = new System.Windows.Forms.Button();
             this.v_dg_medicamentos = new System.Windows.Forms.DataGridView();
-            this.MontoInvertido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.v_txt_buscar = new System.Windows.Forms.TextBox();
-            this.v_panel_eliminar = new System.Windows.Forms.Panel();
-            this.v_btn_eliminar = new System.Windows.Forms.Button();
-            this.v_txt_eliminar = new System.Windows.Forms.TextBox();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoInvertido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_txt_buscar = new System.Windows.Forms.TextBox();
+            this.v_panel_eliminar = new System.Windows.Forms.Panel();
+            this.v_btn_eliminar = new System.Windows.Forms.Button();
+            this.v_txt_eliminar = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.layout_container.SuspendLayout();
             this.v_panel_menubar.SuspendLayout();
             this.v_panel_header.SuspendLayout();
@@ -77,8 +79,10 @@ namespace ExamenT2
             this.v_panel_registrar.SuspendLayout();
             this.v_panel_busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.v_dg_medicamentos)).BeginInit();
-            this.v_panel_eliminar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
+            this.v_panel_eliminar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // layout_container
@@ -457,6 +461,42 @@ namespace ExamenT2
             this.v_dg_medicamentos.Size = new System.Drawing.Size(830, 415);
             this.v_dg_medicamentos.TabIndex = 13;
             // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // precioUnitarioDataGridViewTextBoxColumn
+            // 
+            this.precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "PrecioUnitario";
+            this.precioUnitarioDataGridViewTextBoxColumn.HeaderText = "Precio unitario";
+            this.precioUnitarioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
+            this.precioUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioUnitarioDataGridViewTextBoxColumn.Width = 125;
+            // 
             // MontoInvertido
             // 
             this.MontoInvertido.DataPropertyName = "MontoInvertido";
@@ -465,6 +505,10 @@ namespace ExamenT2
             this.MontoInvertido.Name = "MontoInvertido";
             this.MontoInvertido.ReadOnly = true;
             this.MontoInvertido.Width = 125;
+            // 
+            // medicamentoBindingSource
+            // 
+            this.medicamentoBindingSource.DataSource = typeof(Laboratorio.Medicamento);
             // 
             // v_txt_buscar
             // 
@@ -519,45 +563,13 @@ namespace ExamenT2
             this.v_txt_eliminar.Enter += new System.EventHandler(this.FocusEnter);
             this.v_txt_eliminar.Leave += new System.EventHandler(this.FocusLeave);
             // 
-            // codigoDataGridViewTextBoxColumn
+            // errorProvider1
             // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoDataGridViewTextBoxColumn.Width = 125;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // errorProvider2
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cantidadDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // precioUnitarioDataGridViewTextBoxColumn
-            // 
-            this.precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "PrecioUnitario";
-            this.precioUnitarioDataGridViewTextBoxColumn.HeaderText = "Precio unitario";
-            this.precioUnitarioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
-            this.precioUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precioUnitarioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // medicamentoBindingSource
-            // 
-            this.medicamentoBindingSource.DataSource = typeof(ExamenT2.Medicamento);
+            this.errorProvider2.ContainerControl = this;
             // 
             // FormMedicamentos
             // 
@@ -581,9 +593,11 @@ namespace ExamenT2
             this.v_panel_busqueda.ResumeLayout(false);
             this.v_panel_busqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.v_dg_medicamentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
             this.v_panel_eliminar.ResumeLayout(false);
             this.v_panel_eliminar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -623,6 +637,8 @@ namespace ExamenT2
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn MontoInvertido;
         private System.Windows.Forms.Label v_lbl_image;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }
 
