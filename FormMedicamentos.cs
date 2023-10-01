@@ -22,6 +22,7 @@ namespace ExamenT2
         public FormMedicamentos()
         {
             InitializeComponent();
+            v_lbl_titulo.Text = "Bievenidos al Juego del miedo";
         }
 
        
@@ -29,18 +30,16 @@ namespace ExamenT2
         private void button2_Click(object sender, EventArgs e)
         {
 
-            v_panel_registro.Visible = false;
-            v_panel_registro_controles.Visible = false;
-
-            v_panel_buscar.Visible = true;
-            v_panel_buscar_controles.Visible = true;
+           
+            
 
         }
 
         private void NuevoRegistro(object sender, EventArgs e)
         {
-            v_panel_registro.Visible = true;
-            v_panel_registro_controles.Visible = true;
+            
+
+            
 
         }
 
@@ -56,7 +55,7 @@ namespace ExamenT2
 
             if( v_gestorMedicamento.Registrar(medicamento))
             {
-                MessageBox.Show("Se registro correctamente el medicamento : " + v_txtNombre.Text);
+                MessageBox.Show("Se registro correctamente el medicamento : " + v_txt_nombre.Text);
                 LimpiarControles();
                 return;
             }
@@ -84,19 +83,31 @@ namespace ExamenT2
             LimpiarControles();
         }
 
-        private void v_txt_codigo_MouseEnter(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void v_txt_codigo_Enter(object sender, EventArgs e)
+        private void FocusEnter(object sender, EventArgs e)
         {
             ((TextBox)sender).BackColor = Color.Yellow;
         }
 
-        private void v_txt_codigo_Leave(object sender, EventArgs e)
+        private void FocusLeave(object sender, EventArgs e)
         {
             ((TextBox)sender).BackColor = Color.White;
         }
+
+        private void v_btn_menu_registrar_Click(object sender, EventArgs e)
+        {
+            v_lbl_titulo.Text = "Registrar medicamento";
+        }
+
+        private void v_btn_menu_buscar_Click(object sender, EventArgs e)
+        {
+            v_lbl_titulo.Text = "Buscar medicamento";
+        }
+
+        private void v_btn_menu_eliminar_Click(object sender, EventArgs e)
+        {
+            v_lbl_titulo.Text = "Eliminar medicamento";
+        }
+
+  
     }
 }
