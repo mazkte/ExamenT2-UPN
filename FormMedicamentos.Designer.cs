@@ -45,15 +45,6 @@ namespace ExamenT2
             this.v_lbl_image = new System.Windows.Forms.Label();
             this.v_lbl_titulo = new System.Windows.Forms.Label();
             this.v_panel_container = new System.Windows.Forms.Panel();
-            this.v_panel_busqueda = new System.Windows.Forms.Panel();
-            this.v_btn_ordenar = new System.Windows.Forms.Button();
-            this.v_btn_buscar = new System.Windows.Forms.Button();
-            this.v_dg_medicamentos = new System.Windows.Forms.DataGridView();
-            this.MontoInvertido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.v_txt_buscar = new System.Windows.Forms.TextBox();
-            this.v_panel_eliminar = new System.Windows.Forms.Panel();
-            this.v_btn_eliminar = new System.Windows.Forms.Button();
-            this.v_txt_eliminar = new System.Windows.Forms.TextBox();
             this.v_panel_registrar = new System.Windows.Forms.Panel();
             this.v_txt_codigo = new System.Windows.Forms.TextBox();
             this.v_lbl_codigo = new System.Windows.Forms.Label();
@@ -65,6 +56,15 @@ namespace ExamenT2
             this.v_txt_precio = new System.Windows.Forms.TextBox();
             this.v_btn_registrar = new System.Windows.Forms.Button();
             this.v_btn_cancelar = new System.Windows.Forms.Button();
+            this.v_panel_busqueda = new System.Windows.Forms.Panel();
+            this.v_btn_ordenar = new System.Windows.Forms.Button();
+            this.v_btn_buscar = new System.Windows.Forms.Button();
+            this.v_dg_medicamentos = new System.Windows.Forms.DataGridView();
+            this.MontoInvertido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.v_txt_buscar = new System.Windows.Forms.TextBox();
+            this.v_panel_eliminar = new System.Windows.Forms.Panel();
+            this.v_btn_eliminar = new System.Windows.Forms.Button();
+            this.v_txt_eliminar = new System.Windows.Forms.TextBox();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,10 +74,10 @@ namespace ExamenT2
             this.v_panel_menubar.SuspendLayout();
             this.v_panel_header.SuspendLayout();
             this.v_panel_container.SuspendLayout();
+            this.v_panel_registrar.SuspendLayout();
             this.v_panel_busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.v_dg_medicamentos)).BeginInit();
             this.v_panel_eliminar.SuspendLayout();
-            this.v_panel_registrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,138 +226,6 @@ namespace ExamenT2
             this.v_panel_container.Name = "v_panel_container";
             this.v_panel_container.Size = new System.Drawing.Size(840, 489);
             this.v_panel_container.TabIndex = 2;
-            // 
-            // v_panel_busqueda
-            // 
-            this.v_panel_busqueda.Controls.Add(this.v_btn_ordenar);
-            this.v_panel_busqueda.Controls.Add(this.v_btn_buscar);
-            this.v_panel_busqueda.Controls.Add(this.v_dg_medicamentos);
-            this.v_panel_busqueda.Controls.Add(this.v_txt_buscar);
-            this.v_panel_busqueda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.v_panel_busqueda.Location = new System.Drawing.Point(0, 0);
-            this.v_panel_busqueda.Margin = new System.Windows.Forms.Padding(2);
-            this.v_panel_busqueda.Name = "v_panel_busqueda";
-            this.v_panel_busqueda.Size = new System.Drawing.Size(840, 489);
-            this.v_panel_busqueda.TabIndex = 34;
-            // 
-            // v_btn_ordenar
-            // 
-            this.v_btn_ordenar.BackColor = System.Drawing.Color.SteelBlue;
-            this.v_btn_ordenar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.v_btn_ordenar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.v_btn_ordenar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.v_btn_ordenar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.v_btn_ordenar.Location = new System.Drawing.Point(350, 11);
-            this.v_btn_ordenar.Margin = new System.Windows.Forms.Padding(2);
-            this.v_btn_ordenar.Name = "v_btn_ordenar";
-            this.v_btn_ordenar.Size = new System.Drawing.Size(115, 28);
-            this.v_btn_ordenar.TabIndex = 16;
-            this.v_btn_ordenar.Text = "Ordenar asc*";
-            this.v_btn_ordenar.UseVisualStyleBackColor = false;
-            this.v_btn_ordenar.Click += new System.EventHandler(this.v_btn_ordenar_Click);
-            // 
-            // v_btn_buscar
-            // 
-            this.v_btn_buscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.v_btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.v_btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.v_btn_buscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.v_btn_buscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.v_btn_buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.v_btn_buscar.Location = new System.Drawing.Point(230, 11);
-            this.v_btn_buscar.Margin = new System.Windows.Forms.Padding(2);
-            this.v_btn_buscar.Name = "v_btn_buscar";
-            this.v_btn_buscar.Size = new System.Drawing.Size(115, 28);
-            this.v_btn_buscar.TabIndex = 15;
-            this.v_btn_buscar.Text = "Buscar";
-            this.v_btn_buscar.UseVisualStyleBackColor = false;
-            this.v_btn_buscar.Click += new System.EventHandler(this.v_btn_buscar_Click);
-            // 
-            // v_dg_medicamentos
-            // 
-            this.v_dg_medicamentos.AllowUserToAddRows = false;
-            this.v_dg_medicamentos.AllowUserToOrderColumns = true;
-            this.v_dg_medicamentos.AllowUserToResizeColumns = false;
-            this.v_dg_medicamentos.AllowUserToResizeRows = false;
-            this.v_dg_medicamentos.AutoGenerateColumns = false;
-            this.v_dg_medicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.v_dg_medicamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigoDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn,
-            this.cantidadDataGridViewTextBoxColumn,
-            this.precioUnitarioDataGridViewTextBoxColumn,
-            this.MontoInvertido});
-            this.v_dg_medicamentos.DataSource = this.medicamentoBindingSource;
-            this.v_dg_medicamentos.Location = new System.Drawing.Point(2, 63);
-            this.v_dg_medicamentos.Margin = new System.Windows.Forms.Padding(2);
-            this.v_dg_medicamentos.Name = "v_dg_medicamentos";
-            this.v_dg_medicamentos.ReadOnly = true;
-            this.v_dg_medicamentos.RowHeadersWidth = 51;
-            this.v_dg_medicamentos.RowTemplate.Height = 24;
-            this.v_dg_medicamentos.Size = new System.Drawing.Size(830, 415);
-            this.v_dg_medicamentos.TabIndex = 13;
-            // 
-            // MontoInvertido
-            // 
-            this.MontoInvertido.DataPropertyName = "MontoInvertido";
-            this.MontoInvertido.HeaderText = "Monto invertido";
-            this.MontoInvertido.MinimumWidth = 6;
-            this.MontoInvertido.Name = "MontoInvertido";
-            this.MontoInvertido.ReadOnly = true;
-            this.MontoInvertido.Width = 125;
-            // 
-            // v_txt_buscar
-            // 
-            this.v_txt_buscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.v_txt_buscar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.v_txt_buscar.Location = new System.Drawing.Point(13, 11);
-            this.v_txt_buscar.Margin = new System.Windows.Forms.Padding(2);
-            this.v_txt_buscar.MaxLength = 200;
-            this.v_txt_buscar.Name = "v_txt_buscar";
-            this.v_txt_buscar.Size = new System.Drawing.Size(214, 26);
-            this.v_txt_buscar.TabIndex = 6;
-            this.v_txt_buscar.Text = "Ingrese un nombre para buscar...";
-            this.v_txt_buscar.Enter += new System.EventHandler(this.PlaceHolderEnter);
-            // 
-            // v_panel_eliminar
-            // 
-            this.v_panel_eliminar.Controls.Add(this.v_btn_eliminar);
-            this.v_panel_eliminar.Controls.Add(this.v_txt_eliminar);
-            this.v_panel_eliminar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.v_panel_eliminar.Location = new System.Drawing.Point(0, 0);
-            this.v_panel_eliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.v_panel_eliminar.Name = "v_panel_eliminar";
-            this.v_panel_eliminar.Size = new System.Drawing.Size(840, 489);
-            this.v_panel_eliminar.TabIndex = 35;
-            // 
-            // v_btn_eliminar
-            // 
-            this.v_btn_eliminar.BackColor = System.Drawing.Color.SteelBlue;
-            this.v_btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.v_btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.v_btn_eliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.v_btn_eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.v_btn_eliminar.Location = new System.Drawing.Point(230, 24);
-            this.v_btn_eliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.v_btn_eliminar.Name = "v_btn_eliminar";
-            this.v_btn_eliminar.Size = new System.Drawing.Size(115, 28);
-            this.v_btn_eliminar.TabIndex = 18;
-            this.v_btn_eliminar.Text = "Buscar";
-            this.v_btn_eliminar.UseVisualStyleBackColor = false;
-            this.v_btn_eliminar.Click += new System.EventHandler(this.v_btn_eliminar_Click);
-            // 
-            // v_txt_eliminar
-            // 
-            this.v_txt_eliminar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.v_txt_eliminar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.v_txt_eliminar.Location = new System.Drawing.Point(13, 24);
-            this.v_txt_eliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.v_txt_eliminar.MaxLength = 200;
-            this.v_txt_eliminar.Name = "v_txt_eliminar";
-            this.v_txt_eliminar.Size = new System.Drawing.Size(214, 26);
-            this.v_txt_eliminar.TabIndex = 17;
-            this.v_txt_eliminar.Enter += new System.EventHandler(this.FocusEnter);
-            this.v_txt_eliminar.Leave += new System.EventHandler(this.FocusLeave);
             // 
             // v_panel_registrar
             // 
@@ -519,6 +387,138 @@ namespace ExamenT2
             this.v_btn_cancelar.UseVisualStyleBackColor = false;
             this.v_btn_cancelar.Click += new System.EventHandler(this.v_btn_cancelar_Click);
             // 
+            // v_panel_busqueda
+            // 
+            this.v_panel_busqueda.Controls.Add(this.v_btn_ordenar);
+            this.v_panel_busqueda.Controls.Add(this.v_btn_buscar);
+            this.v_panel_busqueda.Controls.Add(this.v_dg_medicamentos);
+            this.v_panel_busqueda.Controls.Add(this.v_txt_buscar);
+            this.v_panel_busqueda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.v_panel_busqueda.Location = new System.Drawing.Point(0, 0);
+            this.v_panel_busqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.v_panel_busqueda.Name = "v_panel_busqueda";
+            this.v_panel_busqueda.Size = new System.Drawing.Size(840, 489);
+            this.v_panel_busqueda.TabIndex = 34;
+            // 
+            // v_btn_ordenar
+            // 
+            this.v_btn_ordenar.BackColor = System.Drawing.Color.SteelBlue;
+            this.v_btn_ordenar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.v_btn_ordenar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.v_btn_ordenar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.v_btn_ordenar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.v_btn_ordenar.Location = new System.Drawing.Point(350, 11);
+            this.v_btn_ordenar.Margin = new System.Windows.Forms.Padding(2);
+            this.v_btn_ordenar.Name = "v_btn_ordenar";
+            this.v_btn_ordenar.Size = new System.Drawing.Size(115, 28);
+            this.v_btn_ordenar.TabIndex = 16;
+            this.v_btn_ordenar.Text = "Ordenar asc*";
+            this.v_btn_ordenar.UseVisualStyleBackColor = false;
+            this.v_btn_ordenar.Click += new System.EventHandler(this.v_btn_ordenar_Click);
+            // 
+            // v_btn_buscar
+            // 
+            this.v_btn_buscar.BackColor = System.Drawing.Color.SteelBlue;
+            this.v_btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.v_btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.v_btn_buscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.v_btn_buscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.v_btn_buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.v_btn_buscar.Location = new System.Drawing.Point(230, 11);
+            this.v_btn_buscar.Margin = new System.Windows.Forms.Padding(2);
+            this.v_btn_buscar.Name = "v_btn_buscar";
+            this.v_btn_buscar.Size = new System.Drawing.Size(115, 28);
+            this.v_btn_buscar.TabIndex = 15;
+            this.v_btn_buscar.Text = "Buscar";
+            this.v_btn_buscar.UseVisualStyleBackColor = false;
+            this.v_btn_buscar.Click += new System.EventHandler(this.v_btn_buscar_Click);
+            // 
+            // v_dg_medicamentos
+            // 
+            this.v_dg_medicamentos.AllowUserToAddRows = false;
+            this.v_dg_medicamentos.AllowUserToOrderColumns = true;
+            this.v_dg_medicamentos.AllowUserToResizeColumns = false;
+            this.v_dg_medicamentos.AllowUserToResizeRows = false;
+            this.v_dg_medicamentos.AutoGenerateColumns = false;
+            this.v_dg_medicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.v_dg_medicamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.cantidadDataGridViewTextBoxColumn,
+            this.precioUnitarioDataGridViewTextBoxColumn,
+            this.MontoInvertido});
+            this.v_dg_medicamentos.DataSource = this.medicamentoBindingSource;
+            this.v_dg_medicamentos.Location = new System.Drawing.Point(2, 63);
+            this.v_dg_medicamentos.Margin = new System.Windows.Forms.Padding(2);
+            this.v_dg_medicamentos.Name = "v_dg_medicamentos";
+            this.v_dg_medicamentos.ReadOnly = true;
+            this.v_dg_medicamentos.RowHeadersWidth = 51;
+            this.v_dg_medicamentos.RowTemplate.Height = 24;
+            this.v_dg_medicamentos.Size = new System.Drawing.Size(830, 415);
+            this.v_dg_medicamentos.TabIndex = 13;
+            // 
+            // MontoInvertido
+            // 
+            this.MontoInvertido.DataPropertyName = "MontoInvertido";
+            this.MontoInvertido.HeaderText = "Monto invertido";
+            this.MontoInvertido.MinimumWidth = 6;
+            this.MontoInvertido.Name = "MontoInvertido";
+            this.MontoInvertido.ReadOnly = true;
+            this.MontoInvertido.Width = 125;
+            // 
+            // v_txt_buscar
+            // 
+            this.v_txt_buscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.v_txt_buscar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.v_txt_buscar.Location = new System.Drawing.Point(13, 11);
+            this.v_txt_buscar.Margin = new System.Windows.Forms.Padding(2);
+            this.v_txt_buscar.MaxLength = 200;
+            this.v_txt_buscar.Name = "v_txt_buscar";
+            this.v_txt_buscar.Size = new System.Drawing.Size(214, 26);
+            this.v_txt_buscar.TabIndex = 6;
+            this.v_txt_buscar.Text = "Ingrese un nombre para buscar...";
+            this.v_txt_buscar.Enter += new System.EventHandler(this.PlaceHolderEnter);
+            // 
+            // v_panel_eliminar
+            // 
+            this.v_panel_eliminar.Controls.Add(this.v_btn_eliminar);
+            this.v_panel_eliminar.Controls.Add(this.v_txt_eliminar);
+            this.v_panel_eliminar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.v_panel_eliminar.Location = new System.Drawing.Point(0, 0);
+            this.v_panel_eliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.v_panel_eliminar.Name = "v_panel_eliminar";
+            this.v_panel_eliminar.Size = new System.Drawing.Size(840, 489);
+            this.v_panel_eliminar.TabIndex = 35;
+            // 
+            // v_btn_eliminar
+            // 
+            this.v_btn_eliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.v_btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.v_btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.v_btn_eliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.v_btn_eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.v_btn_eliminar.Location = new System.Drawing.Point(230, 24);
+            this.v_btn_eliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.v_btn_eliminar.Name = "v_btn_eliminar";
+            this.v_btn_eliminar.Size = new System.Drawing.Size(115, 28);
+            this.v_btn_eliminar.TabIndex = 18;
+            this.v_btn_eliminar.Text = "Buscar";
+            this.v_btn_eliminar.UseVisualStyleBackColor = false;
+            this.v_btn_eliminar.Click += new System.EventHandler(this.v_btn_eliminar_Click);
+            // 
+            // v_txt_eliminar
+            // 
+            this.v_txt_eliminar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.v_txt_eliminar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.v_txt_eliminar.Location = new System.Drawing.Point(13, 24);
+            this.v_txt_eliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.v_txt_eliminar.MaxLength = 200;
+            this.v_txt_eliminar.Name = "v_txt_eliminar";
+            this.v_txt_eliminar.Size = new System.Drawing.Size(214, 26);
+            this.v_txt_eliminar.TabIndex = 17;
+            this.v_txt_eliminar.Enter += new System.EventHandler(this.FocusEnter);
+            this.v_txt_eliminar.Leave += new System.EventHandler(this.FocusLeave);
+            // 
             // codigoDataGridViewTextBoxColumn
             // 
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
@@ -570,19 +570,19 @@ namespace ExamenT2
             this.MaximizeBox = false;
             this.Name = "FormMedicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestor de Medicamentos";
+            this.Text = "Laboratorio RxJava";
             this.layout_container.ResumeLayout(false);
             this.v_panel_menubar.ResumeLayout(false);
             this.v_panel_header.ResumeLayout(false);
             this.v_panel_header.PerformLayout();
             this.v_panel_container.ResumeLayout(false);
+            this.v_panel_registrar.ResumeLayout(false);
+            this.v_panel_registrar.PerformLayout();
             this.v_panel_busqueda.ResumeLayout(false);
             this.v_panel_busqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.v_dg_medicamentos)).EndInit();
             this.v_panel_eliminar.ResumeLayout(false);
             this.v_panel_eliminar.PerformLayout();
-            this.v_panel_registrar.ResumeLayout(false);
-            this.v_panel_registrar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
 

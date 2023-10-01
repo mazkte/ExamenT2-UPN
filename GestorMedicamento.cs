@@ -95,10 +95,6 @@ namespace ExamenT2
                 }
             }
 
-
-        //    v_sortedList
-          //      .Sort((m1, m2) => string.Compare(m1.Nombre, m2.Nombre, StringComparison.CurrentCulture));
-
             return v_sortedArray;
         }
 
