@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
 
 namespace ExamenT2
@@ -22,35 +14,27 @@ namespace ExamenT2
         public FormMedicamentos()
         {
             InitializeComponent();
-            v_lbl_titulo.Text = "Bievenidos al Juego del miedo";
+            v_lbl_titulo.Text = "Gestor de medicamentos";
+            this.v_panel_container.Controls[0].Visible = false;
+            this.v_panel_container.Controls[1].Visible = false;
+            this.v_panel_container.Controls[2].Visible = false;
         }
 
-       
-
-        private void button2_Click(object sender, EventArgs e)
+        private void CargarMedicamentos()
         {
-
-           
-            
-
+            v_dg_medicamentos.DataSource = v_gestorMedicamento.Listar();
         }
 
-        private void NuevoRegistro(object sender, EventArgs e)
-        {
-            
-
-            
-
-        }
 
         private void v_btn_registrar_Click(object sender, EventArgs e)
         {
             Medicamento medicamento = new Medicamento
             {
                 Codigo = v_txt_codigo.Text,
-                Nombre = v_txtNombre.Text,
+                Nombre = v_txt_nombre.Text,
                 Cantidad = int.Parse(v_txt_cantidad.Text),
-                PrecioUnitario = double.Parse(v_txt_precio.Text)                
+                PrecioUnitario = double.Parse(v_txt_precio.Text),
+                
             };
 
             if( v_gestorMedicamento.Registrar(medicamento))
@@ -65,10 +49,9 @@ namespace ExamenT2
         private void LimpiarControles()
         {
             v_txt_codigo.Clear();
-            v_txtNombre.Clear();
+            v_txt_nombre.Clear();
             v_txt_cantidad.Clear();
             v_txt_precio.Clear();
-
             v_txt_codigo.Focus();
         }
 
@@ -85,7 +68,13 @@ namespace ExamenT2
 
         private void FocusEnter(object sender, EventArgs e)
         {
-            ((TextBox)sender).BackColor = Color.Yellow;
+            ((TextBox)sender).BackColor = Color.LightYellow;
+        }
+
+        private void PlaceHolderEnter(object sender, EventArgs e)
+        {
+            ((TextBox)sender).BackColor = Color.LightYellow;
+            ((TextBox)sender).Text = string.Empty;
         }
 
         private void FocusLeave(object sender, EventArgs e)
@@ -96,18 +85,71 @@ namespace ExamenT2
         private void v_btn_menu_registrar_Click(object sender, EventArgs e)
         {
             v_lbl_titulo.Text = "Registrar medicamento";
+            this.v_panel_container.Controls[0].Visible = true;
+            this.v_panel_container.Controls[1].Visible = false;
+            this.v_panel_container.Controls[2].Visible = false;
+
         }
 
         private void v_btn_menu_buscar_Click(object sender, EventArgs e)
         {
             v_lbl_titulo.Text = "Buscar medicamento";
+            this.v_panel_container.Controls[0].Visible = false;
+            this.v_panel_container.Controls[1].Visible = true;
+            this.v_panel_container.Controls[2].Visible = false;
+
+            CargarMedicamentos();
         }
 
         private void v_btn_menu_eliminar_Click(object sender, EventArgs e)
         {
             v_lbl_titulo.Text = "Eliminar medicamento";
+
+            this.v_panel_container.Controls[0].Visible = false;
+            this.v_panel_container.Controls[1].Visible = false;
+            this.v_panel_container.Controls[2].Visible = true;
         }
 
-  
+        private void v_btn_buscar_Click(object sender, EventArgs e)
+        {
+            v_dg_medicamentos.DataSource = v_gestorMedicamento.BuscarPorNombre(v_txt_buscar.Text);
+            v_dg_medicamentos.Refresh();
+
+            v_txt_buscar.Clear();
+        }
+
+        private void v_btn_ordenar_Click(object sender, EventArgs e)
+        {
+            v_dg_medicamentos.DataSource = v_gestorMedicamento.OrdenarPorNombre();
+            v_dg_medicamentos.Refresh();
+        }
+
+        private void v_btn_eliminar_Click(object sender, EventArgs e)
+        {
+            Medicamento v_medicamento = v_gestorMedicamento.BuscarPorCodigo(v_txt_eliminar.Text);
+
+            if (string.IsNullOrEmpty(v_medicamento.Nombre))
+            {
+                MessageBox.Show($"El Medicamento buscado {v_txt_eliminar.Text} no existe.");
+                return;
+            }
+            else
+            {
+               var result = ((int)MessageBox.Show($"Desea eliminar el siguiente medicamente {v_medicamento.Nombre}",
+                    "Mensaje de confirmacion",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question));
+
+                if(result == 1)
+                {
+                    v_gestorMedicamento.Eliminar(v_medicamento);
+                    MessageBox.Show($"El Medicamento {v_medicamento.Nombre} ha sido eliminado correctamente.");
+
+                }
+                
+            }
+            v_txt_eliminar.Clear();
+
+        }
     }
 }

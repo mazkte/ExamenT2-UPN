@@ -15,6 +15,8 @@ namespace ExamenT2
         public int Cantidad { get; set; }
         public double PrecioUnitario { get; set; }
 
+        public double MontoInvertido { get; set; }
+
         public Medicamento(string v_codigo, string v_nombre, 
             int v_cantidad, double v_precio_unitario)
         {
@@ -22,6 +24,7 @@ namespace ExamenT2
             Nombre = v_nombre;
             Cantidad = v_cantidad;
             PrecioUnitario = v_precio_unitario;
+            MontoInvertido = Cantidad * PrecioUnitario;
         }
     }
 }
